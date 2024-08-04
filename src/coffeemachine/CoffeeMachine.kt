@@ -11,7 +11,7 @@ enum class Action { BUY, FILL, TAKE }
 enum class CoffeeType { ESPRESSO, LATTE, CAPPUCCINO }
 
 class CoffeeMachine {
-    private val availableIngredients = Ingredient(400, 540, 120, 9  )
+    private val availableIngredients = Ingredient(400, 540, 120, 9)
     private var moneyLeft = 550  // In USD
     private val availableCoffees = listOf(
         Coffee(CoffeeType.ESPRESSO, 4, Ingredient(250, 0, 16)),
