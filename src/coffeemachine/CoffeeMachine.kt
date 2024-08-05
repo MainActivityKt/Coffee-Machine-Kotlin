@@ -1,14 +1,12 @@
 package coffeemachine
 
 import utils.Utils.Message.*
+import utils.Utils.Coffee
+import utils.Utils.CoffeeType
+import utils.Utils.Action
+import utils.Utils.Ingredient
 
-data class Coffee(val type: CoffeeType, val cost: Int, val requiredIngredients: Ingredient)
 
-data class Ingredient(var water: Int, var milk: Int, var coffeeBeans: Int, var cups: Int = 1)
-
-enum class Action { BUY, FILL, TAKE }
-
-enum class CoffeeType { ESPRESSO, LATTE, CAPPUCCINO }
 
 class CoffeeMachine {
     private val availableIngredients = Ingredient(400, 540, 120, 9)
@@ -48,7 +46,7 @@ class CoffeeMachine {
     }
 
     private fun buyCoffee() {
-        println(BUY_COFFEE_MENU.message)
+        println(MENU.message)
         val input = readln().toInt()
         val chosenCoffee = availableCoffees[input - 1]
         availableIngredients.apply {
